@@ -1,0 +1,1 @@
+10:51:32.269551800 - Database exception: No connection with database. Reconnect and try again.
