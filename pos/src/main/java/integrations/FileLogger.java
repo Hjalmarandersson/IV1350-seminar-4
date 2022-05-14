@@ -24,6 +24,7 @@ public class FileLogger {
             FileWriter fileWriter = new FileWriter(fileLocationAndName);
             PrintWriter printWriter = new PrintWriter(fileWriter, true);
             this.logStream = printWriter;
+            System.out.println("File successfully printed to desktop");
         }catch(IOException ioe){
             System.out.println("Can't log exceptions");
         }

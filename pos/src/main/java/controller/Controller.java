@@ -82,13 +82,18 @@ public class Controller {
             return sale.endSale();
 	}
         
+        /**
+         * Method to add Sale observer.
+         * @param obs represents the observer added to the ArrayList.
+         */
         public void addSaleObserver(SaleObserver obs) {
         this.saleObservers.add(obs);
-    }
+        }
         
         /**
          * Method that represents when the cashier has recieved the payment from
          * the customer and enters it into the program.
+         * pay also adds observer to SaleObserver.
          * 
          * @param amountPaid represents the amount paid by the customer.
          */

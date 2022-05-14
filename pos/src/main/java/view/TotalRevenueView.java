@@ -3,7 +3,7 @@ package view;
 import model.SaleObserver;
 
 /**
- *
+ * Creates and implements SaleObserver to update and print out revenue to terminal.
  * @author Hjalmar
  */
 public class TotalRevenueView implements SaleObserver {
