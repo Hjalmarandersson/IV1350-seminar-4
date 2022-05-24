@@ -5,7 +5,7 @@ package integrations;
  * Exception that is thrown when a database can't be reached.
  * @author Hjalmar
  */
-public class DatabaseException extends Exception {
+public class DatabaseException extends RuntimeException {
     
     /**
      * Creates a new instance of DatabaseException.

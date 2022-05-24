@@ -26,13 +26,11 @@ public class InventorySystemTest {
     public void testDatabaseException() {
         int enteredItemId = 5;
         try {
-        result = instance.lookForItem(enteredItemId).getName();
-        expResult = null;
+        instance.lookForItem(enteredItemId).getName();
         fail("Exception wasn't thrown since an item was found.");
         } catch(DatabaseException | InvalidItemIdException e){
-            System.out.println(e.getMessage());
+          assertTrue(e.getMessage().contains("No connection with database"), "DatabaseException wasn't thrown");
         }
-            assertEquals(expResult, result, "Database connection was OK.");
         
     }
     
@@ -40,13 +38,12 @@ public class InventorySystemTest {
     public void testInvalidItemIdException() {
         int enteredItemId = 6;
         try {
-        result = instance.lookForItem(enteredItemId).getName();
-        expResult = null;
+        instance.lookForItem(enteredItemId).getName();
         fail("Exeption wasn't thrown since item was found");
         } catch(DatabaseException | InvalidItemIdException e){
-            System.out.println(e.getMessage());
+           assertTrue(e.getMessage().contains("can't be found in inventory system"), "InvalidItemIdException wasn't thrown");
         }
-        assertEquals(expResult, result, "Unexpected item was found");
+        
         
     }
     
